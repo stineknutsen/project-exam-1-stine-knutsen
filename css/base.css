@@ -100,19 +100,28 @@ header {
     height: 300px;
     top: 155px;
     right: 0px;
-    padding: 20px;
     z-index: 1000;
+  }
+  nav a {
+    color: var(--colour-text-dark);
+  }
+
+  #hamburger-menu:checked ~ nav {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
   }
 }
 
-nav a {
-  color: var(--colour-text-dark);
-}
+@media screen and (min-width: 601px) {
+  header div label {
+    display: none;
+  }
 
-#hamburger-menu:checked ~ nav {
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
+  nav {
+    display: flex;
+    gap: 20px;
+  }
 }
 
 /* Footer */
