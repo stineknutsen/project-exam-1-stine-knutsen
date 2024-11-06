@@ -1,0 +1,6 @@
+:root {
+  --colour-gradient: linear-gradient(to right, #222222, #2b6876);
+  --colour-background: #f3f3f3;
+  --colour-text-light: #ffffff;
+  --colour-text-dark: #000000;
+}

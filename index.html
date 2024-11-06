@@ -1,18 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test</title>
-</head>
-
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="HotView Labs delivers real-time insights and expert analysis to empower tech leaders worldwide. Stay ahead with industry-leading research, strategic guidance, and in-depth blog posts covering technology trends, data analytics, AI advancements, and innovation strategies for todays evolving digital landscape."
+    />
+    <title>Home | HotView Labs</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="/js/script.js" type="module" defer></script>
+    <script
+      src="https://kit.fontawesome.com/a5e5d5dde4.js"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="images/site.webmanifest" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <a href="/index.html"
+          ><img
+            src="/images/desktoplogo.png"
+            alt="Logo of HotView Labs"
+            class="desktop"
+        /></a>
+        <a href="/index.html"
+          ><img
+            src="/images/phonelogo.png"
+            alt="Logo of HotView Labs"
+            class="phone"
+        /></a>
+      </div>
+      <div>
+        <a href="/about/index.html">About Us</a>
+        <a href="/account/login.html"
+          >Admin<i class="fa-regular fa-user"></i
+        ></a>
+        <label for="hamburger-menu"><i class="fa-solid fa-bars"></i></label>
+        <input type="checkbox" id="hamburger-menu" />
+        <nav>
+          <ul></ul>
+        </nav>
+      </div>
+    </header>
     <main>
-        <section>
-            <h1>Hello! </h1>
-        </section>
-    </main>
-</body>
+      <section>
+        <h1>
+          Delivering the latest, most accurate insights to tech leaders
+          worldwide
+        </h1>
+      </section>
 
+      <section>
+        <h2>Latest posts</h2>
+        <div id="new-posts-container" class="new-posts-container">
+          <span class="loader"></span>
+          <!-- The carousel with 3 newest posts goes here-->
+        </div>
+      </section>
+
+      <section>
+        <h2>More Posts</h2>
+        <!-- Search, sort and categories -->
+        <input id="search" type="text" placeholder="Search.." />
+        <select id="sort">
+          <option value="">Sort</option>
+          <option value="title">A-Z</option>
+          <option value="created">Newest</option>
+        </select>
+        <select id="category">
+          <option value="">Category</option>
+          <option value="category">category</option>
+          <option value="category">category</option>
+        </select>
+      </section>
+
+      <section>
+        <div id="posts-container" class="posts-container">
+          <span class="loader"></span>
+          <!-- Blog posts go here, pagination 4 pages-->
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="logo">
+        <a href="/index.html"
+          ><img
+            src="/images/desktoplogo.png"
+            alt="Logo of HotView Labs"
+            class="desktop"
+        /></a>
+        <a href="/index.html"
+          ><img
+            src="/images/phonelogo.png"
+            alt="Logo of HotView Labs"
+            class="phone"
+        /></a>
+      </div>
+      <div class="footerlinks">
+        <h3>Links</h3>
+        <a href="/about/index.html">About Us</a>
+        <a href="/account/login.html">Admin</a>
+      </div>
+      <div class="contact">
+        <h3>Contact us</h3>
+        <p>+47 444 44 444</p>
+        <p>labs@hotview.com</p>
+        <p>44 Lab Street, 4444 HotView, Norway</p>
+      </div>
+    </footer>
+  </body>
 </html>
