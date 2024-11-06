@@ -1,8 +1,7 @@
-/* Global styles */
+/* Global */
 
 body {
   min-height: 100vh;
-  max-width: 1500px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -69,11 +68,7 @@ i {
   padding: 10px;
 }
 
-#hamburger-menu {
-  display: none;
-}
-
-/* Header & Footer */
+/* Header */
 
 header {
   display: flex;
@@ -82,9 +77,50 @@ header {
   padding: 50px;
 }
 
+.headerlinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Nav & Hamburger Menu */
+
+#hamburger-menu {
+  display: none;
+}
+
+@media screen and (min-width: 301px) and (max-width: 600px) {
+  nav {
+    display: none;
+    position: absolute;
+    text-align: center;
+    justify-content: center;
+    background-color: var(--colour-background);
+    width: 100vw;
+    height: 300px;
+    top: 155px;
+    right: 0px;
+    padding: 20px;
+    z-index: 1000;
+  }
+}
+
+nav a {
+  color: var(--colour-text-dark);
+}
+
+#hamburger-menu:checked ~ nav {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* Footer */
+
 footer {
   display: flex;
   flex-direction: column;
+  gap: 20px;
   padding: 50px;
   color: var(--colour-text-light);
 }
@@ -92,12 +128,13 @@ footer {
 .footerlinks {
   display: flex;
   flex-direction: column;
+  gap: 15px;
 }
 
-@media screen and (min-width: 600px) {
+@media screen and (min-width: 601px) {
   footer {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 50px;
   }
 }
