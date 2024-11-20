@@ -28,7 +28,8 @@ h2,
 h3,
 h4,
 p,
-a {
+a,
+label {
   font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -52,7 +53,8 @@ h3 {
   }
 
   p,
-  a {
+  a,
+  label {
     font-size: 16px;
   }
 }
@@ -71,7 +73,8 @@ h3 {
   }
 
   p,
-  a {
+  a,
+  label {
     font-size: 18px;
   }
 }
@@ -90,7 +93,8 @@ h3 {
   }
 
   p,
-  a {
+  a,
+  label {
     font-size: 20px;
   }
 }

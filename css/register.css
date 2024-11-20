@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  max-width: 700px;
+  margin: 40px auto;
+  background-color: var(--colour-card-backgound);
+  outline: 1px solid black;
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.register,
+.login {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input {
+  height: 40px;
+  outline: 1px solid black;
+  border-radius: 5px;
+}
+
+.button {
+  background-color: #2b6876;
+  color: white;
+  font-weight: 600;
+  outline: 1px solid black;
+  margin: 10px 0px;
+}
+
+.form a {
+  color: var(--colour-text-dark);
+  font-weight: 600;
+}
