@@ -15,7 +15,7 @@ loginForm.addEventListener("submit", async (event) => {
     localStorage.setItem("accessToken", data.data.accessToken);
     alert(`Login successful!`);
     console.log("Hello");
-    window.location.href = "index.html";
+    window.location.href = "../account/index.html";
   } catch (error) {
     alert(`Error: Something went wrong`);
   }
