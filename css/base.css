@@ -35,7 +35,8 @@ label {
 
 h1,
 h2,
-h3 {
+h3,
+label {
   font-weight: 600;
 }
 
@@ -186,7 +187,7 @@ header {
 
   nav {
     display: flex;
-    gap: 20px;
+    gap: 30px;
   }
 }
 
