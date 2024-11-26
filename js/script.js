@@ -21,7 +21,7 @@ function router() {
 document.addEventListener("DOMContentLoaded", () => {
   const loginButton = document.getElementById("loginButton");
   const nav = loginButton.parentElement;
-  const userName = localStorage.getItem("username");
+  const userName = localStorage.getItem("userName");
 
   const authToken = localStorage.getItem("accessToken");
 
@@ -44,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       if (confirm("Are you sure you want to log out?")) {
         localStorage.removeItem("accessToken");
         localStorage.removeItem("userName");
+        localStorage.removeItem("userEmail");
         alert("You have been logged out.");
         window.location.href = "/account/login.html";
       }

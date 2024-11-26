@@ -13,8 +13,9 @@ loginForm.addEventListener("submit", async (event) => {
   try {
     const data = await apiRequest("/auth/login", "POST", formData);
     localStorage.setItem("accessToken", data.data.accessToken);
+    localStorage.setItem("userEmail", data.data.email);
+    localStorage.setItem("userName", data.data.name);
     alert(`Login successful!`);
-    console.log("Hello");
     window.location.href = "../account/index.html";
   } catch (error) {
     alert(`Error: Something went wrong`);

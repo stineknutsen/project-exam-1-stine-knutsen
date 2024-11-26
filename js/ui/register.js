@@ -13,6 +13,7 @@ registerForm.addEventListener("submit", async (event) => {
 
   try {
     const data = await apiRequest("/auth/register", "POST", formData);
+
     alert(`Registration successful! Redirecting to login`);
     window.location.href = "login.html";
   } catch (error) {
