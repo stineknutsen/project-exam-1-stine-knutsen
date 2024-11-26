@@ -9,7 +9,7 @@
     />
     <title>Register | HotView Labs</title>
     <link rel="stylesheet" href="/css/styles.css" />
-    <script src="/js/script.js" type="module" defer></script>
+    <script src="/js/ui/register.js" type="module" defer></script>
     <script
       src="https://kit.fontawesome.com/a5e5d5dde4.js"
       crossorigin="anonymous"
@@ -67,18 +67,30 @@
           <p>Create an account to manage blog posts</p>
         </div>
         <form class="register" method="post">
-          <label for="name">Full name*</label>
-          <input type="text" name="fullname" id="fullname" required />
-          <label for="email">Email address*</label>
-          <input type="email" name="email" id="email" required />
-          <label for="password">Password*</label>
-          <input type="password" name="password" id="password" required />
-          <p>Minimum 8 letters, 1 capital letter and 1 number</p>
-          <label for="password">Confirm password*</label>
+          <label for="name">Full name:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            minlength="2"
+            placeholder="Enter your full name"
+            required
+          />
+          <label for="email">Email address:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="Enter your email address (example@stud.noroff.no)"
+            required
+          />
+          <label for="password">Password:</label>
           <input
             type="password"
-            name="confirm_password"
-            id="confirm_password"
+            name="password"
+            id="password"
+            minlength="8"
+            placeholder="Enter your password (min 8 characters)"
             required
           />
 
