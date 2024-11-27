@@ -11,7 +11,8 @@
 }
 
 .register,
-.login {
+.login,
+.create {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -19,6 +20,12 @@
 
 input {
   height: 40px;
+  border: none;
+  outline: 1px solid black;
+  border-radius: 5px;
+}
+
+textarea {
   border: none;
   outline: 1px solid black;
   border-radius: 5px;
