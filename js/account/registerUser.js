@@ -1,4 +1,4 @@
-import { apiKey, registerEndpoint } from "../shared/api";
+import { apiKey, registerEndpoint } from "../shared/api.js";
 
 const registerForm = document.querySelector(".register");
 
@@ -11,13 +11,13 @@ registerForm.addEventListener("submit", async (event) => {
     password: document.getElementById("password").value,
   };
 
-  if (!email.endsWith("@stud.noroff.no")) {
+  if (!formData.email.endsWith("@stud.noroff.no")) {
     alert("Please use a @stud.noroff.no email address");
     return;
   }
 
   try {
-    const data = await fetch(registerEndpoint, {
+    const response = await fetch(registerEndpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -31,8 +31,8 @@ registerForm.addEventListener("submit", async (event) => {
       throw new Error(error.message || "Failed to register");
     }
     alert(`Registration successful! Redirecting to login`);
-    window.location.href = "/login.html";
+    window.location.href = "login.html";
   } catch (error) {
-    alert(`Error: Something went wrong`);
+    alert(`Error: Something went wrong during registration`);
   }
 });

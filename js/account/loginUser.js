@@ -1,6 +1,15 @@
-import { apiKey, loginEndpoint } from "../shared/api";
+import { apiKey, loginEndpoint } from "../shared/api.js";
 
-export async function loginUser() {
+const loginForm = document.querySelector(".login");
+
+loginForm.addEventListener("submit", async (event) => {
+  event.preventDefault();
+
+  const formData = {
+    email: document.getElementById("email").value,
+    password: document.getElementById("password").value,
+  };
+
   try {
     const response = await fetch(loginEndpoint, {
       method: "POST",
@@ -8,17 +17,23 @@ export async function loginUser() {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify(credentials),
+      body: JSON.stringify(formData),
     });
 
     if (!response.ok) {
-      const error = await response.json();
       throw new Error(error.message || "Log in failed");
     }
 
-    return await response.json();
+    const data = await response.json();
+    console.log(data);
+
+    localStorage.setItem("accessToken", data.data.accessToken);
+    localStorage.setItem("userEmail", data.data.email);
+    localStorage.setItem("userName", data.data.name);
+
+    alert(`Login successful!`);
+    window.location.href = "../account/index.html";
   } catch (error) {
-    console.error("API error:", error);
-    throw error;
+    alert(`Error: Something went wrong during login`);
   }
-}
+});
