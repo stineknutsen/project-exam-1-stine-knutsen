@@ -1,33 +1,31 @@
 export function createpostsHtml(container, posts) {
-  let parent = container;
-
-  if (typeof container === "string") {
-    parent = document.querySelector(container);
-  }
-
-  if (posts.length === 0) {
-    parent.innerHTML = `<p>No blog posts</p>`;
+  if (!posts || posts.length === 0) {
+    container.innerHTML = `<p>No blog posts to display.</p>`;
     return;
   }
 
-  parent.innerHTML = "";
+  container.innerHTML = "";
 
   posts.forEach((post) => {
-    const postWrapper = document.createElement("div");
-    postWrapper.classList.add("index-post-wrapper");
+    const postThumbNail = document.createElement("a");
+    postThumbNail.classList.add("post");
+    postThumbNail.href = `/post/index.html?id=${id}`;
 
-    const postCard = document.createElement("a");
-    postCard.classList.add("post");
-    postCard.href = `/post/index.html?id=${id}`;
+    const postWrapper = document.createElement("article");
+    postWrapper.classList.add("post-wrapper");
 
     const imageUrl = post.media?.url;
+    const imageAlt = post.media?.alt;
     const imageElement = document.createElement("img");
     imageElement.src = imageUrl;
+    imageElement.alt = imageAlt;
 
+    const title = post.title;
     const titleElement = document.createElement("h3");
     titleElement.textContent = title;
 
-    parent.append(postCard);
-    postCard.append(imageElement, titleElement);
+    parent.append(postThumbNail);
+    postThumbNail.append(postWrapper);
+    postWrapper.append(imageElement, titleElement);
   });
 }

@@ -1,4 +1,6 @@
-import { allPostsEndpoint } from "../../shared/api.js";
+import { allPostsEndpoint } from "../shared/api.js";
+import { apiKey } from "../shared/api.js";
+import { getAccessToken } from "../shared/getAccessToken.js";
 
 export async function createPost() {
   document.addEventListener("DOMContentLoaded", () => {
@@ -27,16 +29,19 @@ export async function createPost() {
         //created: new Date().toISOString,
       };
 
+      const accessToken = getAccessToken();
+
       try {
-        console.log("hello");
         const response = await fetch(allPostsEndpoint, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
+            Authorization: `Bearer ${accessToken}`,
           },
+
           body: JSON.stringify(postData),
         });
+        console.log("hello");
 
         if (response.ok) {
           alert("Post created successfully!");
