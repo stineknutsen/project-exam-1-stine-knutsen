@@ -1,3 +1,6 @@
+import { updateHeader } from "./account/updateHeader.js";
+
+updateHeader();
 /*
 function router() {
     const { pathname } = window.location;
