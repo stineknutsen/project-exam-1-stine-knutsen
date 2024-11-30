@@ -1,0 +1,31 @@
+.posts-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.thumbnail {
+  border: 1px solid black;
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: var(--colour-card-background);
+}
+
+.thumbnail img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 16px;
+}
+
+.thumbnail h3 {
+  margin-bottom: 8px;
+  font-size: 1.5rem;
+  color: var(--colour-text-dark);
+}
+
+.buttons-div {
+  display: flex;
+  justify-content: space-between;
+}

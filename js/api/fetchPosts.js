@@ -1,20 +1,12 @@
-import { allPostsEndpoint } from "../shared/api.js";
+import { allPostsEndpoint, apiKey } from "../shared/api.js";
 
 export async function fetchPosts() {
-  const accessToken = localStorage.getItem("accessToken");
   try {
-    const response = await fetch(allPostsEndpoint, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${accessToken}`,
-      },
-
-      body: JSON.stringify(postData),
-    });
+    const response = await fetch(allPostsEndpoint);
 
     if (response.ok) {
-      return await response.json();
+      const posts = await response.json();
+      return posts.data;
     } else {
       alert("Failed to fetch posts");
     }

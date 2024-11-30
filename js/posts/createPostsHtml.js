@@ -1,4 +1,6 @@
-export function createpostsHtml(container, posts) {
+import { singlePostEndpoint } from "../shared/api.js";
+
+export function indexPostsHtml(container, posts) {
   if (!posts || posts.length === 0) {
     container.innerHTML = `<p>No blog posts to display.</p>`;
     return;
@@ -7,11 +9,12 @@ export function createpostsHtml(container, posts) {
   container.innerHTML = "";
 
   posts.forEach((post) => {
+    const postId = singlePostEndpoint;
     const postThumbNail = document.createElement("a");
-    postThumbNail.classList.add("post");
-    postThumbNail.href = `/post/index.html?id=${id}`;
+    postThumbNail.classList.add("thumbnail");
+    postThumbNail.href = postId;
 
-    const postWrapper = document.createElement("article");
+    const postWrapper = document.createElement("div");
     postWrapper.classList.add("post-wrapper");
 
     const imageUrl = post.media?.url;
@@ -24,8 +27,34 @@ export function createpostsHtml(container, posts) {
     const titleElement = document.createElement("h3");
     titleElement.textContent = title;
 
-    parent.append(postThumbNail);
+    const buttonsDiv = document.createElement("div");
+    buttonsDiv.classList.add("buttons-div");
+
+    const editButton = document.createElement("button");
+    editButton.classList.add("edit-button");
+    editButton.textContent = "Edit";
+
+    const deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.textContent = "Delete";
+
+    container.append(postThumbNail);
     postThumbNail.append(postWrapper);
-    postWrapper.append(imageElement, titleElement);
+    postWrapper.append(imageElement, titleElement, buttonsDiv);
+    buttonsDiv.append(editButton, deleteButton);
+  });
+
+  document.querySelectorAll(".edit-button").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const postId = event.target.dataset.id;
+      window.location.href = `../post/edit.html?id=${postId}`;
+    });
+  });
+
+  document.querySelectorAll(".delete-button").forEach((button) => {
+    button.addEventListener("click", (event) => {
+      const postId = event.target.dataset.id;
+      deletePost(postId);
+    });
   });
 }

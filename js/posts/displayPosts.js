@@ -1,12 +1,23 @@
 import { fetchPosts } from "../api/fetchPosts.js";
+import { createPostsHtml } from "./createPostsHtml.js";
 
 export async function displayPosts() {
-  const container = document.getElementById("posts-container");
-
   try {
+    const container = document.getElementById("posts-container");
     const posts = await fetchPosts();
-    createPostssHtml(container, posts);
+    createPostsHtml(container, posts);
   } catch (error) {
     alert("Failed to display posts.");
   }
 }
+
+/*
+async function main() {
+
+  if (username === "hotview_admin") {
+    posts = await fetchPostsFromAPI();
+  } else {
+    posts = fetchPostsFromLocalStorage();
+  }
+
+} */
