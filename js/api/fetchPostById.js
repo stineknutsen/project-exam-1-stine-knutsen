@@ -1,12 +1,16 @@
 import { singlePostEndpoint } from "../constants/api.js";
 
 export async function fetchPostById() {
-  const response = await fetch(singlePostEndpoint);
+  try {
+    const response = await fetch(singlePostEndpoint);
 
-  if (response.ok) {
-    const post = await response.json().data;
-    return post;
+    if (response.ok) {
+      const post = await response.json();
+      return post.data;
+    } else {
+      alert("Failed to fetch post");
+    }
+  } catch (error) {
+    throw new Error("Failed to fetch post");
   }
-
-  throw new Error("Failed to fetch post");
 }

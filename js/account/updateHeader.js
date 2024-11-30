@@ -4,12 +4,11 @@ export function updateHeader() {
     const blogButton = document.getElementById("blogButton");
     const aboutButton = document.getElementById("aboutButton");
     const nav = loginButton.parentElement;
-    const userName = localStorage.getItem("userName");
 
     const authToken = localStorage.getItem("accessToken");
 
     if (authToken) {
-      loginButton.textContent = "Hello, " + userName + "!";
+      loginButton.textContent = "Account";
       loginButton.href = "/account/index.html";
 
       blogButton.remove();

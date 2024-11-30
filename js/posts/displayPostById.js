@@ -1,4 +1,4 @@
-export async function displaySinglePost() {
+export async function displayPostById() {
   const id = getQueryParam("id");
 
   if (!id) {

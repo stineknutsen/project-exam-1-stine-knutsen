@@ -3,7 +3,9 @@ import { visitorRestriction } from "./account/restrictions.js";
 import { registerUser } from "./account/registerUser.js";
 import { loginUser } from "./account/loginUser.js";
 import { createPost } from "./posts/createPost.js";
-import { displayPosts } from "./posts/displayPosts.js";
+import { displayFeedPosts } from "./posts/displayFeedPosts.js";
+import { displayManagePosts } from "./posts/displayManagePosts.js";
+import { displayPostById } from "./posts/displayPostById.js";
 
 function router() {
   const { pathname } = window.location;
@@ -11,10 +13,10 @@ function router() {
   switch (pathname) {
     case "/":
     case "/index.html":
-      displayPosts();
+      displayFeedPosts();
       break;
     case "/post/index.html":
-      //displaySinglePost();
+      displayPostById();
       break;
     case "/account/register.html":
       registerUser();
@@ -24,7 +26,7 @@ function router() {
       break;
     case "/account/index.html":
       visitorRestriction();
-      displayPosts();
+      displayManagePosts();
       break;
     case "/post/create.html":
       visitorRestriction();
