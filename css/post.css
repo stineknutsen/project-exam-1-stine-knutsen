@@ -16,7 +16,6 @@
 .thumbnail img {
   max-width: 100%;
   height: auto;
-  margin-bottom: 16px;
 }
 
 .thumbnail h3 {
@@ -28,4 +27,19 @@
 .buttons-div {
   display: flex;
   justify-content: space-between;
+}
+
+/*single post*/
+.image-wrapper {
+  max-height: 300px;
+  overflow: hidden;
+}
+.image-wrapper img {
+  width: 100vw;
+}
+
+.post-wrapper {
+  padding: 16px;
+  max-width: 900px;
+  margin: 0 auto;
 }

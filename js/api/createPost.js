@@ -26,7 +26,6 @@ export async function createPost() {
           alt: altText,
         },
         author: localStorage.getItem("userName"),
-        //created: new Date().toISOString,
       };
 
       const accessToken = getAccessToken();

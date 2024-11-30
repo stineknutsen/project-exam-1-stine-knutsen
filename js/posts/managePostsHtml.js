@@ -9,7 +9,6 @@ export function managePostsHtml(container, posts) {
   container.innerHTML = "";
 
   posts.forEach((post) => {
-    const postId = singlePostEndpoint;
     const postThumbNail = document.createElement("div");
     postThumbNail.classList.add("thumbnail");
 
@@ -32,10 +31,12 @@ export function managePostsHtml(container, posts) {
     const editButton = document.createElement("button");
     editButton.classList.add("edit-button");
     editButton.textContent = "Edit";
+    editButton.dataset.id = post.id;
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
     deleteButton.textContent = "Delete";
+    deleteButton.dataset.id = post.id;
 
     container.append(postThumbNail);
     postThumbNail.append(postWrapper);
