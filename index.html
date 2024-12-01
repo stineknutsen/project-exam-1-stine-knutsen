@@ -54,7 +54,7 @@
         <label for="hamburger-menu"><i class="fa-solid fa-bars"></i></label>
         <input type="checkbox" id="hamburger-menu" />
         <nav>
-          <a href="/index.html" id="blogButton">Blog</a>
+          <a href="/index.html" id="blogButton" class="active">Blog</a>
           <a href="/about/index.html" id="aboutButton">About Us</a>
           <a href="/account/login.html" id="loginButton">Sign In</a>
         </nav>
@@ -74,10 +74,9 @@
             <i class="fa-solid fa-arrow-left"></i>
           </button>
           <div id="carousel-container" class="carousel-container">
-            <div
-              id="carousel-post-container"
-              class="carousel-post-container"
-            ></div>
+            <div id="carousel-post-container" class="carousel-post-container">
+              <p>Loading...</p>
+            </div>
           </div>
           <button class="button next-button">
             <i class="fa-solid fa-arrow-right"></i>
@@ -87,16 +86,12 @@
 
       <section class="posts-grid-heading">
         <h2>More Posts</h2>
-        <input id="search" type="text" placeholder="Search.." />
-        <select id="sort">
-          <option value="">Sort</option>
-          <option value="title">A-Z</option>
-          <option value="created">Newest</option>
-        </select>
       </section>
 
       <section>
-        <div id="posts-container" class="posts-container"></div>
+        <div id="posts-container" class="posts-container">
+          <p>Loading...</p>
+        </div>
       </section>
     </main>
     <footer>

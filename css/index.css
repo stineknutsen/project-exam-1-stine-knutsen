@@ -6,7 +6,7 @@
 
 .heading h1 {
   width: 90%;
-  max-width: 900px;
+  max-width: 1200px;
   text-align: center;
   margin: 0 auto;
   padding: 50px 0;
@@ -48,6 +48,10 @@
   box-shadow: 2px 2px 8px var(--colour-card-shadow);
 }
 
+.thumbnail:hover {
+  background-color: var(--colour-card-hover);
+}
+
 .thumbnail img {
   max-width: 100%;
   height: auto;
@@ -68,7 +72,7 @@
 .posts-grid-heading {
   padding-top: 2rem;
   width: 90%;
-  max-width: 900px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -92,7 +96,6 @@
   align-items: center;
   gap: 1rem;
   max-width: 900px;
-  position: relative;
   overflow: hidden;
 }
 
@@ -125,11 +128,20 @@
   color: var(--colour-text-dark);
 }
 
+.carousel-item a:hover {
+  color: var(--colour-button);
+}
+
 /* Carousel buttons */
 .next-button,
 .previous-button {
   transform: translateY(-50%);
   padding: 10px;
+}
+
+.next-button:hover i,
+.previous-button:hover i {
+  color: var(--colour-card-hover);
 }
 
 .banner-carousel {

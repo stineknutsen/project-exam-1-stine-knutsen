@@ -216,3 +216,9 @@ footer {
     margin: 0 auto;
   }
 }
+
+/* active */
+
+.active {
+  text-decoration: underline;
+}

@@ -47,7 +47,7 @@ export function singlepostHtml(container, post) {
   bodyElement.textContent = body;
 
   infoWrapper.append(publishedElement, authorElement, shareElement);
-  postWrapper.append(infoWrapper, titleElement, bodyElement);
+  postWrapper.append(titleElement, bodyElement, infoWrapper);
   imageWrapper.append(imageElement);
   container.append(imageWrapper, postWrapper);
 }

@@ -1,6 +1,6 @@
 /* Single post */
 .image-wrapper {
-  max-height: 300px;
+  height: 300px;
   overflow: hidden;
 }
 
@@ -9,7 +9,13 @@
 }
 
 .post-wrapper {
-  padding: 16px;
+  padding: 50px 0;
   max-width: 900px;
   margin: 0 auto;
+}
+
+@media only screen and (min-width: 600px) {
+  .image-wrapper {
+    height: 500px;
+  }
 }
