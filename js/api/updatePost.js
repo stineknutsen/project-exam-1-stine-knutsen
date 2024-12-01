@@ -1,22 +1,28 @@
 import { singlePostEndpoint } from "../shared/api.js";
 import { getAccessToken } from "../shared/getAccessToken.js";
 
-export async function deletePost(postId) {
+export async function updatePost(postId, updatedData) {
   const accessToken = getAccessToken();
+
+  console.log("ok");
 
   try {
     const response = await fetch(singlePostEndpoint(postId), {
-      method: "DELETE",
+      method: "PUT",
       headers: {
+        "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,
       },
+      body: JSON.stringify(updatedData),
     });
 
     if (!response.ok) {
-      throw new Error("Failed to delete post. Please try again.");
+      throw new Error("Failed to update post. Please try again.");
     }
 
-    alert("Post deleted successfully!");
+    const result = await response.json();
+    alert("Post updated successfully!");
+    return result;
   } catch (error) {
     console.error(error);
     alert(error.message);

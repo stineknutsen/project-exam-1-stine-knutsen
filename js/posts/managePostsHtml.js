@@ -1,4 +1,4 @@
-import { singlePostEndpoint } from "../shared/api.js";
+import { deletePost } from "../api/deletePost.js";
 
 export function managePostsHtml(container, posts) {
   if (!posts || posts.length === 0) {
@@ -52,9 +52,12 @@ export function managePostsHtml(container, posts) {
   });
 
   document.querySelectorAll(".delete-button").forEach((button) => {
-    button.addEventListener("click", (event) => {
+    button.addEventListener("click", async (event) => {
       const postId = event.target.dataset.id;
-      deletePost(postId);
+      if (confirm("Are you sure you want to delete this post?")) {
+        await deletePost(postId);
+        window.location.reload();
+      }
     });
   });
 }

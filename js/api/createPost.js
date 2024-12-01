@@ -1,5 +1,4 @@
 import { allPostsEndpoint } from "../shared/api.js";
-import { apiKey } from "../shared/api.js";
 import { getAccessToken } from "../shared/getAccessToken.js";
 
 export async function createPost() {

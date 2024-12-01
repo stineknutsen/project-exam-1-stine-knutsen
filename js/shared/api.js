@@ -6,5 +6,4 @@ export const loginEndpoint = `${baseUrl}/auth/login`;
 
 const blogName = "hotview_admin";
 export const allPostsEndpoint = `${baseUrl}/blog/posts/${blogName}`;
-export const singlePostEndpoint = (postId) =>
-  `${baseUrl}/blog/posts/${blogName}/${postId}`;
+export const singlePostEndpoint = (postId) => `${allPostsEndpoint}/${postId}`;
