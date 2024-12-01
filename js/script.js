@@ -7,6 +7,7 @@ import { displayFeedPosts } from "./posts/displayFeedPosts.js";
 import { displayManagePosts } from "./posts/displayManagePosts.js";
 import { displaySinglePost } from "./posts/displaySinglePost.js";
 import { editPost } from "./api/editPost.js";
+import { displayCarousel } from "./posts/displayCarousel.js";
 
 function router() {
   const { pathname } = window.location;
@@ -14,6 +15,7 @@ function router() {
   switch (pathname) {
     case "/":
     case "/index.html":
+      displayCarousel();
       displayFeedPosts();
       break;
     case "/post/index.html":

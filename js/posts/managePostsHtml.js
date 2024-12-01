@@ -35,7 +35,7 @@ export function managePostsHtml(container, posts) {
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
-    deleteButton.textContent = "Delete";
+    deleteButton.textContent = "X";
     deleteButton.dataset.id = post.id;
 
     container.append(postThumbNail);

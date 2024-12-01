@@ -1,12 +1,20 @@
 import { fetchPosts } from "../api/fetchPosts.js";
 import { feedPostsHtml } from "./feedPostsHtml.js";
 
+// displayFeedPosts.js
 export async function displayFeedPosts() {
   try {
-    const container = document.getElementById("posts-container");
     const posts = await fetchPosts();
-    feedPostsHtml(container, posts);
+
+    const container = document.getElementById("posts-container");
+    container.innerHTML = ""; // Clear previous content
+
+    // Use the 12 latest posts for the grid
+    const postThumbnails = posts.slice(0, 12);
+
+    feedPostsHtml(container, postThumbnails);
   } catch (error) {
-    alert("Failed to display posts.");
+    console.error(error);
+    alert(error.message);
   }
 }

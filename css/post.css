@@ -1,7 +1,19 @@
 .posts-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+}
+
+@media only screen and (min-width: 600px) {
+  .posts-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .posts-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .thumbnail {
@@ -11,6 +23,8 @@
   margin-bottom: 16px;
   border-radius: 8px;
   background-color: var(--colour-card-background);
+  display: flex;
+  flex-direction: column;
 }
 
 .thumbnail img {
@@ -29,7 +43,7 @@
   justify-content: space-between;
 }
 
-/*single post*/
+/* single post */
 .image-wrapper {
   max-height: 300px;
   overflow: hidden;
@@ -42,4 +56,70 @@
   padding: 16px;
   max-width: 900px;
   margin: 0 auto;
+}
+
+/* carousel */
+
+/* Wrapper for the whole carousel */
+.carousel-container {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  max-width: 900px;
+  position: relative; /* To position the buttons correctly */
+  overflow: hidden; /* Hide the extra carousel items */
+}
+
+/* Container holding all carousel items (used for sliding effect) */
+.carousel-post-container {
+  display: flex;
+  transition: transform 0.3s ease;
+  width: 100%;
+}
+
+/* Each carousel item should take up 100% of the container width */
+.carousel-item {
+  flex: 0 0 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  background-color: var(--colour-card-background);
+  border: 1px solid black;
+}
+
+.carousel-item img {
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel-item a {
+  color: var(--colour-text-dark);
+}
+
+/* Carousel buttons positioning */
+.next-button,
+.previous-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.previous-button {
+  left: 10px;
+}
+
+.next-button {
+  right: 10px;
 }
