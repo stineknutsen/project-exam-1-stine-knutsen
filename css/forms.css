@@ -42,7 +42,8 @@ textarea {
 }
 
 .delete-button {
-  background-color: red;
+  background-color: rgb(157, 18, 18);
+  color: var(--colour-text-light);
   font-weight: 600;
   border-radius: 5px;
   text-transform: uppercase;
