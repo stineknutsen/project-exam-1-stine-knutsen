@@ -32,7 +32,6 @@ export function updateHeader() {
         }
       });
     } else {
-      // User is not logged in: Update Admin button
       loginButton.textContent = "Sign In";
       loginButton.href = "/account/login.html";
     }

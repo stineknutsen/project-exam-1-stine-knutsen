@@ -8,6 +8,7 @@
   outline: 1px solid black;
   border-radius: 15px;
   padding: 20px;
+  box-shadow: 2px 2px 8px var(--colour-card-shadow);
 }
 
 .register,
@@ -33,16 +34,18 @@ textarea {
 }
 
 .button {
-  background-color: #2b6876;
-  color: white;
+  background-color: var(--colour-button);
+  color: var(--colour-text-light);
   font-weight: 600;
   border: none;
   outline: 1px solid black;
   margin: 10px 0px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .delete-button {
-  background-color: rgb(157, 18, 18);
+  background-color: var(--colour-button-delete);
   color: var(--colour-text-light);
   font-weight: 600;
   border-radius: 5px;

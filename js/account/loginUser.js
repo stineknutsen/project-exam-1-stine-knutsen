@@ -27,7 +27,6 @@ export function loginUser() {
       }
 
       const data = await response.json();
-      console.log(data);
 
       localStorage.setItem("accessToken", data.data.accessToken);
       localStorage.setItem("userEmail", data.data.email);
@@ -35,7 +34,6 @@ export function loginUser() {
 
       alert(`Login successful!`);
       updateHeader();
-      console.log("ok");
       window.location.href = "../account/index.html";
     } catch (error) {
       alert(`Error: Something went wrong during login`);

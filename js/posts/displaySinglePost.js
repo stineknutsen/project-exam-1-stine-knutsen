@@ -4,7 +4,6 @@ import { singlepostHtml } from "./singlePostHtml.js";
 
 export async function displaySinglePost() {
   const postId = getPostIdFromUrl();
-  console.log("Post Id:", postId);
 
   if (!postId) {
     window.location.href = "/";

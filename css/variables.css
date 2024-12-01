@@ -1,8 +1,11 @@
 :root {
   --colour-gradient: linear-gradient(to right, #222222, #2b6876);
+  --colour-gradient-heading: linear-gradient(#ccfbff, #f3f3f3);
   --colour-background: #f3f3f3;
   --colour-card-background: #2b687623;
+  --colour-card-shadow: #ccfbff;
   --colour-button: #2b6876;
+  --colour-button-delete: #9d1212;
   --colour-text-light: #ffffff;
   --colour-text-dark: #000000;
 }

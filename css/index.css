@@ -1,9 +1,26 @@
+/* Heading */
+.heading {
+  background-color: #ccfbff;
+  background-image: var(--colour-gradient-heading);
+}
+
+.heading h1 {
+  width: 90%;
+  max-width: 900px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
 /* Thumbnail Grid */
 
 .posts-container {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
+  width: 90%;
+  margin: 0 auto;
+  padding: 50px 0;
 }
 
 @media only screen and (min-width: 600px) {
@@ -15,6 +32,7 @@
 @media only screen and (min-width: 900px) {
   .posts-container {
     grid-template-columns: repeat(3, 1fr);
+    max-width: 1200px;
   }
 }
 
@@ -27,6 +45,7 @@
   background-color: var(--colour-card-background);
   display: flex;
   flex-direction: column;
+  box-shadow: 2px 2px 8px var(--colour-card-shadow);
 }
 
 .thumbnail img {
@@ -45,9 +64,27 @@
   justify-content: space-between;
 }
 
+/* Posts Grid Heading */
+.posts-grid-heading {
+  padding-top: 2rem;
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+@media only screen and (min-width: 600px) {
+  .posts-grid-heading {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
 /* Carousel */
 
-/* Wrapper for the whole carousel */
 .carousel-container {
   width: 90%;
   margin: 0 auto;
@@ -55,18 +92,16 @@
   align-items: center;
   gap: 1rem;
   max-width: 900px;
-  position: relative; /* To position the buttons correctly */
-  overflow: hidden; /* Hide the extra carousel items */
+  position: relative;
+  overflow: hidden;
 }
 
-/* Container holding all carousel items (used for sliding effect) */
 .carousel-post-container {
   display: flex;
   transition: transform 0.3s ease;
   width: 100%;
 }
 
-/* Each carousel item should take up 100% of the container width */
 .carousel-item {
   flex: 0 0 100%;
   box-sizing: border-box;
@@ -78,6 +113,7 @@
   border-radius: 8px;
   background-color: var(--colour-card-background);
   border: 1px solid black;
+  box-shadow: 2px 2px 8px var(--colour-card-shadow);
 }
 
 .carousel-item img {
@@ -89,24 +125,22 @@
   color: var(--colour-text-dark);
 }
 
-/* Carousel buttons positioning */
+/* Carousel buttons */
 .next-button,
 .previous-button {
-  position: absolute;
-  top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
   padding: 10px;
-  border: none;
-  cursor: pointer;
-  z-index: 10;
 }
 
-.previous-button {
-  left: 10px;
+.banner-carousel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 950px;
+  margin: 0 auto;
 }
 
-.next-button {
-  right: 10px;
+.fa-arrow-right,
+.fa-arrow-left {
+  padding: 0;
 }

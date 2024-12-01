@@ -4,8 +4,6 @@ import { getAccessToken } from "../shared/getAccessToken.js";
 export async function updatePost(postId, updatedData) {
   const accessToken = getAccessToken();
 
-  console.log("ok");
-
   try {
     const response = await fetch(singlePostEndpoint(postId), {
       method: "PUT",

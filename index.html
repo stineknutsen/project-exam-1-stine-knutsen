@@ -61,29 +61,32 @@
       </div>
     </header>
     <main>
-      <section>
+      <section class="heading">
         <h1>
-          Delivering the latest, most accurate insights to tech leaders
-          worldwide
+          "Delivering the latest, most accurate insights to tech leaders
+          worldwide"
         </h1>
       </section>
 
       <section>
-        <span class="loader"></span>
-        <div id="carousel-container" class="carousel-container">
-          <button class="previous-button">Previous</button>
-          <!-- The carousel with 3 newest posts goes here-->
-          <div
-            id="carousel-post-container"
-            class="carousel-post-container"
-          ></div>
-          <button class="next-button">Next</button>
+        <div class="banner-carousel">
+          <button class="button previous-button">
+            <i class="fa-solid fa-arrow-left"></i>
+          </button>
+          <div id="carousel-container" class="carousel-container">
+            <div
+              id="carousel-post-container"
+              class="carousel-post-container"
+            ></div>
+          </div>
+          <button class="button next-button">
+            <i class="fa-solid fa-arrow-right"></i>
+          </button>
         </div>
       </section>
 
-      <section>
+      <section class="posts-grid-heading">
         <h2>More Posts</h2>
-        <!-- Search, sort and categories -->
         <input id="search" type="text" placeholder="Search.." />
         <select id="sort">
           <option value="">Sort</option>
@@ -93,38 +96,37 @@
       </section>
 
       <section>
-        <div id="posts-container" class="posts-container">
-          <span class="loader"></span>
-          <!-- Blog posts go here, pagination 4 pages-->
-        </div>
+        <div id="posts-container" class="posts-container"></div>
       </section>
     </main>
     <footer>
-      <div class="logo">
-        <a href="/index.html"
-          ><img
-            src="/images/desktoplogo.png"
-            alt="Logo of HotView Labs"
-            class="desktop"
-        /></a>
-        <a href="/index.html"
-          ><img
-            src="/images/phonelogo.png"
-            alt="Logo of HotView Labs"
-            class="phone"
-        /></a>
-      </div>
-      <div>
-        <h3>Links</h3>
-        <div class="footerlinks">
-          <a href="/about/index.html">About Us</a>
-          <a href="/account/index.html">Account</a>
+      <div class="footer-content">
+        <div class="logo">
+          <a href="/index.html"
+            ><img
+              src="/images/desktoplogo.png"
+              alt="Logo of HotView Labs"
+              class="desktop"
+          /></a>
+          <a href="/index.html"
+            ><img
+              src="/images/phonelogo.png"
+              alt="Logo of HotView Labs"
+              class="phone"
+          /></a>
         </div>
-      </div>
-      <div class="contact">
-        <h3>Contact us</h3>
-        <p>+47 000 00 000</p>
-        <p>labs@hotview.com</p>
+        <div>
+          <h3>Links</h3>
+          <div class="footerlinks">
+            <a href="/about/index.html">About Us</a>
+            <a href="/account/index.html">Account</a>
+          </div>
+        </div>
+        <div class="contact">
+          <h3>Contact us</h3>
+          <p>+47 000 00 000</p>
+          <p>labs@hotview.com</p>
+        </div>
       </div>
     </footer>
   </body>

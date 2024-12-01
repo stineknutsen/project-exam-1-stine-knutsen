@@ -1,4 +1,3 @@
-// Function to initialize carousel behavior
 export function initializeCarousel() {
   const carouselPostContainer = document.getElementById(
     "carousel-post-container"
@@ -16,7 +15,7 @@ export function initializeCarousel() {
       currentPost = index;
     }
 
-    const offset = -currentPost * 100; // Move container to the left by 100% per post
+    const offset = -currentPost * 100;
     carouselPostContainer.style.transform = `translateX(${offset}%)`;
   }
 
@@ -28,10 +27,8 @@ export function initializeCarousel() {
     showPost(currentPost - 1);
   }
 
-  // Initialize the first post
   showPost(currentPost);
 
-  // Optionally add event listeners for next/prev buttons
   document.querySelector(".next-button").addEventListener("click", nextPost);
   document
     .querySelector(".previous-button")

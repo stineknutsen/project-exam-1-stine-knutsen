@@ -28,7 +28,6 @@ export function singlepostHtml(container, post) {
   const month = String(date.getMonth() + 1).padStart(2, "0");
   const year = date.getFullYear();
   const formattedDate = `${day}/${month}/${year}`;
-  console.log(formattedDate);
   publishedElement.textContent = "Published: " + formattedDate;
 
   const author = post.author?.name;

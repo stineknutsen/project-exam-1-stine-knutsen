@@ -39,7 +39,6 @@ export async function createPost() {
 
           body: JSON.stringify(postData),
         });
-        console.log("hello");
 
         if (response.ok) {
           alert("Post created successfully!");

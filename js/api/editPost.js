@@ -15,11 +15,9 @@ export async function editPost() {
   const updateButton = document.getElementById("update-button");
   const deleteButton = document.getElementById("delete-button");
 
-  // Fetch and display post data
   try {
     const post = await fetchPostById(postId);
 
-    // Populate the form with the post data
     if (post) {
       document.getElementById("title").value = post.title || "";
       document.getElementById("content").value = post.body || "";
@@ -31,7 +29,6 @@ export async function editPost() {
     alert("Could not load the post data. Please try again later.");
     return;
   }
-  //////////////////////////
 
   updateButton.addEventListener("click", async (event) => {
     event.preventDefault();
@@ -49,7 +46,6 @@ export async function editPost() {
   });
 
   deleteButton.addEventListener("click", async () => {
-    console.log("ok");
     if (confirm("Are you sure you want to delete this post?")) {
       await deletePost(postId);
       window.location.href = "/account/index.html";
