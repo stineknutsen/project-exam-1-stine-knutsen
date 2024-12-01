@@ -11,8 +11,8 @@ export function feedPostsHtml(container, posts) {
     postThumbNail.classList.add("thumbnail");
     postThumbNail.href = `./post/index.html?id=${post.id}`;
 
-    const postWrapper = document.createElement("div");
-    postWrapper.classList.add("post-wrapper");
+    const imageWrapper = document.createElement("div");
+    imageWrapper.classList.add("image-wrapper");
 
     const imageUrl = post.media?.url;
     const imageAlt = post.media?.alt;
@@ -25,7 +25,7 @@ export function feedPostsHtml(container, posts) {
     titleElement.textContent = title;
 
     container.append(postThumbNail);
-    postThumbNail.append(postWrapper);
-    postWrapper.append(imageElement, titleElement);
+    postThumbNail.append(imageWrapper, titleElement);
+    imageWrapper.append(imageElement);
   });
 }

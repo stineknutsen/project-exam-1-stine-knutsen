@@ -1,0 +1,25 @@
+.welcome {
+  width: 90%;
+  margin: 0 auto;
+  background-color: #ccfbff;
+  background-image: var(--colour-gradient-heading);
+}
+
+.welcome button {
+  height: 40px;
+}
+
+.buttons-div .edit-button,
+.buttons-div .delete-button {
+  height: 30px;
+}
+
+.buttons-div {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+}
+
+.image-wrapper {
+  max-height: 200px;
+}

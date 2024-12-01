@@ -12,8 +12,8 @@ export function managePostsHtml(container, posts) {
     const postThumbNail = document.createElement("div");
     postThumbNail.classList.add("thumbnail");
 
-    const postWrapper = document.createElement("div");
-    postWrapper.classList.add("post-wrapper");
+    const imageWrapper = document.createElement("div");
+    imageWrapper.classList.add("image-wrapper");
 
     const imageUrl = post.media?.url;
     const imageAlt = post.media?.alt;
@@ -35,12 +35,12 @@ export function managePostsHtml(container, posts) {
 
     const deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
-    deleteButton.textContent = "X";
+    deleteButton.textContent = "Delete";
     deleteButton.dataset.id = post.id;
 
     container.append(postThumbNail);
-    postThumbNail.append(postWrapper);
-    postWrapper.append(imageElement, titleElement, buttonsDiv);
+    postThumbNail.append(imageWrapper, titleElement, buttonsDiv);
+    imageWrapper.append(imageElement);
     buttonsDiv.append(editButton, deleteButton);
   });
 
